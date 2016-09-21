@@ -4,9 +4,9 @@
 	
 	use Abraham\TwitterOAuth\TwitterOAuth;
 	
-	define('CONSUMER_KEY', '69eMzTcTMycQNop3gFL5Gqcl9'); 
-	define('CONSUMER_SECRET', 'kNrw00ssqCnB7cHG8IDymdT8tdepDyMI6YCYs6ZZE6iOKCicZG');
-	define('OAUTH_CALLBACK', 'http://jobcall.in/callback.php'); 
+	define('CONSUMER_KEY', ''); //Enter your consume key
+	define('CONSUMER_SECRET', ''); //Enter your consume secret
+	define('OAUTH_CALLBACK', ''); // Enter call  backurl
 	if (!isset($_SESSION['access_token'])) {
 	
 		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
@@ -175,12 +175,7 @@
 		 
 	<!-- Download -->
 		<script>
-		function show()
-			{
-			alert("under process");
-			}
-			
-			function download()
+		function download()
 			{
 				
 				xmlhttp=new XMLHttpRequest();
@@ -191,21 +186,21 @@
 					if (xmlhttp.status=200 && xmlhttp.readyState==4)
 					{
 						document.getElementById("download").innerHTML=xmlhttp.responseText;
-
 					}
 				}
 				document.getElementById("downloadpdf").submit();
 			}
-			</script>
+		</script>
 
 
-	    <div class="row">
+	<div class="row">
 			<div class="col-sm-3"></div>
     		<div class="col-sm-6 a follower">
-				<form action="" method="get">
-					<input type="button" class="btn btn-default" value="Download Tweets" name="d" onClick="download()"/> 
-				</form>
+			<form action="" method="get">
+				<input type="button" class="btn btn-default" value="Download Tweets" name="d" onClick="download()"/> 
+			</form>
   		</div>
+  	</div>
 <?php
 if(isset($_REQUEST['d']))
 {
