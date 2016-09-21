@@ -4,9 +4,9 @@
 	
 	use Abraham\TwitterOAuth\TwitterOAuth;
 	
-	define('CONSUMER_KEY', '69eMzTcTMycQNop3gFL5Gqcl9'); 
-	define('CONSUMER_SECRET', 'kNrw00ssqCnB7cHG8IDymdT8tdepDyMI6YCYs6ZZE6iOKCicZG');
-	define('OAUTH_CALLBACK', 'http://jobcall.in/callback.php'); 
+	define('CONSUMER_KEY', ''); //Enter your consume key
+	define('CONSUMER_SECRET', ''); //Enter your consume secret
+	define('OAUTH_CALLBACK', ''); // Enter call  backurl
 	if (!isset($_SESSION['access_token'])) {
 	
 		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
@@ -34,7 +34,7 @@
 <?php
 		$d=$_GET['S'];
 		
-		$follower = $connection->get('followers/list', ['count' => 10]);
+		$follower = $connection->get('followers/list', ['count' => 100]);
 		$totalfollower[] = $follower;
 		$start = 1;
 			echo "<ul class='list-inline'>";
