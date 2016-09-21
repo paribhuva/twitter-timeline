@@ -4,9 +4,9 @@
 	
 	use Abraham\TwitterOAuth\TwitterOAuth;
 	
-	define('CONSUMER_KEY', '69eMzTcTMycQNop3gFL5Gqcl9'); 
-	define('CONSUMER_SECRET', 'kNrw00ssqCnB7cHG8IDymdT8tdepDyMI6YCYs6ZZE6iOKCicZG');
-	define('OAUTH_CALLBACK', 'http://jobcall.in/callback.php'); 
+	define('CONSUMER_KEY', ''); 
+	define('CONSUMER_SECRET', '');
+	define('OAUTH_CALLBACK', ''); 
 	if (!isset($_SESSION['access_token'])) {
 	
 		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
@@ -42,7 +42,6 @@
 	if(isset($_GET['st']))
   	{
 		$showtweet=$_GET['st'];
-		//echo $showtweet;
 		if($showtweet != NULL)
 		  {
 				
