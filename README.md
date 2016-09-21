@@ -1,7 +1,17 @@
 # twitter-timeline
-https://scrutinizer-ci.com/g/paribhuva/twitter-timeline/badges/quality-score.png?b=master
+<html>
+<head>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<a href="https://scrutinizer-ci.com/g/paribhuva/twitter-timeline/"> scrutinizer <span class="badge">5.47</span></a>
+</body>
+</html>
 
 Author: Pari bhuva
+
 Author URL: http://github.com/paribhuva
 
 Author Email: paribhuva@hotmail.com
