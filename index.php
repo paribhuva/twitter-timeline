@@ -116,12 +116,12 @@
 				<?php
 					$follower = $connection->get('followers/list', ['count' => 10]);
 					$totalfollower[] = $follower;
-					$start = 1;
+					$no = 1;
 					echo "<ul class='list-inline'>";
-					foreach ($totalfollower as $page) {
-						foreach ($page->users as $key) {
-							echo "<li>" . $start . ':' . $key->name . "</li><br>";
-							$start++;
+					foreach ($totalfollower as $p) {
+						foreach ($p->users as $id) {
+							echo "<li>" . $no . ':' . $id->name . "</li><br>";
+							$no++;
 						}
 					}
 					echo "</ul>";
@@ -137,7 +137,7 @@
 		{
 			//alert(msg);
 			xmlhttp=new XMLHttpRequest();
-			xmlhttp.open("GET","tmp.php?S="+msg,true);
+			xmlhttp.open("GET","follo.php?S="+msg,true);
 			xmlhttp.send();
 			xmlhttp.onreadystatechange=function()
 			{
@@ -175,7 +175,12 @@
 		 
 	<!-- Download -->
 		<script>
-		function download()
+		function show()
+			{
+			alert("under process");
+			}
+			
+			function download()
 			{
 				
 				xmlhttp=new XMLHttpRequest();
@@ -186,21 +191,21 @@
 					if (xmlhttp.status=200 && xmlhttp.readyState==4)
 					{
 						document.getElementById("download").innerHTML=xmlhttp.responseText;
+
 					}
 				}
 				document.getElementById("downloadpdf").submit();
 			}
-		</script>
+			</script>
 
 
-	<div class="row">
+	    <div class="row">
 			<div class="col-sm-3"></div>
     		<div class="col-sm-6 a follower">
-			<form action="" method="get">
-				<input type="button" class="btn btn-default" value="Download Tweets" name="d" onClick="download()"/> 
-			</form>
+				<form action="" method="get">
+					<input type="button" class="btn btn-default" value="Download Tweets" name="d" onClick="download()"/> 
+				</form>
   		</div>
-  	</div>
 <?php
 if(isset($_REQUEST['d']))
 {
