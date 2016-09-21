@@ -1,4 +1,6 @@
 # twitter-timeline
+https://scrutinizer-ci.com/g/paribhuva/twitter-timeline/badges/quality-score.png?b=master
+
 Author: Pari bhuva
 Author URL: http://github.com/paribhuva
 
