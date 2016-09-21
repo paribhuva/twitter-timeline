@@ -6,7 +6,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<a href="https://scrutinizer-ci.com/g/paribhuva/twitter-timeline/"> scrutinizer <span class="badge">5.47</span></a>
+#<a href="https://scrutinizer-ci.com/g/paribhuva/twitter-timeline/"> scrutinizer <span class="badge">5.47</span></a>
 </body>
 </html>
 
@@ -19,6 +19,8 @@ Author Email: paribhuva@hotmail.com
 Code Link: https://github.com/paribhuva/twitter-timeline
 
 Tutorial Link: http://jobcall.in
+
+#For better output use firefox
 
 ============ Introduction ============
 
