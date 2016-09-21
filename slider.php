@@ -47,44 +47,44 @@
 				
 				// getting recent tweeets by user 
 				$tweets = $connection->get('statuses/user_timeline', ['count' => 10,'include_rts' => false, 'exclude_replies' => true ,'screen_name' => $showtweet]);
-				$totalTweets[] = $tweets;
-				$page = 0;
+				$ttweets[] = $tweets;
+				$p = 0;
 			
-				for ($count = 10; $count < 10; $count += 10)
+				for ($i = 10; $i < 10; $i += 10)
 				{ 
-					$max = count($totalTweets[$page]) - 1;
-					$tweets = $connection->get('statuses/user_timeline', ['count' => 10,'include_rts' => false, 'exclude_replies' => true, 'max_id' => $totalTweets[$page][$max]->id_str ,'screen_name' => $showtweet ]);
-					$totalTweets[] = $tweets;
-					$page += 1;
+					$max = count($ttweets[$page]) - 1;
+					$tweets = $connection->get('statuses/user_timeline', ['count' => 10,'include_rts' => false, 'exclude_replies' => true, 'max_id' => $ttweets[$p][$maximum]->id_str ,'screen_name' => $showtweet ]);
+					$ttweets[] = $tweets;
+					$p += 1;
 				}
 			}
 	}
 	else if(isset($_GET['d']))
 	{
 		$tweets = $connection->get('statuses/user_timeline', ['count' => 3200,'include_rts' => false, 'exclude_replies' => true]);
-		$totalTweets[] = $tweets;
-		$page = 0;
-			for($count = 3200; $count < 3200; $count += 3200)
+		$ttweets[] = $tweets;
+		$p = 0;
+			for($i = 3200; $i < 3200; $i += 3200)
 				{
-					$max = count($totalTweets[$page]) - 1;
-					$tweets = $connection->get('statuses/user_timeline', ['count' => 3200,'include_rts' => false, 'exclude_replies' => true, 'max_id' => $totalTweets[$page][$max]->id_str ]);
-					$totalTweets[] = $tweets;
-					$page += 1;
+					$maximum = count($ttweets[$p]) - 1;
+					$tweets = $connection->get('statuses/user_timeline', ['count' => 3200,'include_rts' => false, 'exclude_replies' => true, 'max_id' => $ttweets[$p][$maximum]->id_str ]);
+					$ttweets[] = $tweets;
+					$p += 1;
 				}
 	}
 	else
 	{
 		// getting recent tweeets by user itself
 		$tweets = $connection->get('statuses/user_timeline', ['count' => 10,'include_rts' => false, 'exclude_replies' => true]);
-		$totalTweets[] = $tweets;
-		$page = 0;
+		$ttweets[] = $tweets;
+		$p = 0;
 	
-		for ($count = 10; $count < 10; $count += 10)
+		for ($i = 10; $i < 10; $it += 10)
 		{ 
-			$max = count($totalTweets[$page]) - 1;
-			$tweets = $connection->get('statuses/user_timeline', ['count' => 10,'include_rts' => false, 'exclude_replies' => true, 'max_id' => $totalTweets[$page][$max]->id_str ]);
-			$totalTweets[] = $tweets;
-			$page += 1;
+			$maximum = count($totalTweets[$p]) - 1;
+			$tweets = $connection->get('statuses/user_timeline', ['count' => 10,'include_rts' => false, 'exclude_replies' => true, 'max_id' => $ttweets[$p][$maximum]->id_str ]);
+			$ttweets[] = $tweets;
+			$p += 1;
 		}
 	
 	}
@@ -93,15 +93,14 @@
 	<ul>
 <?php
 	// printing recent tweets on screen
-	echo "";
-	$start = 1;
-	foreach ($totalTweets as $page)
+	$no = 1;
+	foreach ($ttweets as $p)
 	{
-		foreach ($page as $key)
+		foreach ($p as $id)
 		{
 		
-			echo "<li class=a id='fslider'>" . $start . ':' . $key->text . "</li>";
-			$start++;
+			echo "<li class=a id='fslider'>" . $no . ':' . $id->text . "</li>";
+			$no++;
 		}
 	}
 ?>
