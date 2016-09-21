@@ -2,7 +2,8 @@
 Author: Pari bhuva
 Author URL: http://github.com/paribhuva
 Author Email: paribhuva@hotmail.com
-Tutorial Link: https://github.com/paribhuva/twitter-timeline
+Code Link: https://github.com/paribhuva/twitter-timeline
+Tutorial Link: http://jobcall.in
 
 ============ Introduction ============
 This small project helps web developers to implement the twitter application  with Twitter using PHP and Twitter api at their website.
