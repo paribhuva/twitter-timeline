@@ -169,33 +169,28 @@
            </div>
 		 </div>
 		 </div>
-		 <form id="downloadpdf" method="post">
-		 <input type="hidden" name="d">  
-		 </form>
+		
 		 
 	<!-- Download -->
 		<script>
-		function show()
-			{
-			alert("under process");
-			}
-			
-			function download()
+		function download()
 			{
 				
 				xmlhttp=new XMLHttpRequest();
-				xmlhttp.open("GET","slider.php?d=y",true);
+				xmlhttp.open("GET","pdf.php",true);
 				xmlhttp.send();
 				xmlhttp.onreadystatechange=function()
 				{
 					if (xmlhttp.status=200 && xmlhttp.readyState==4)
 					{
-						document.getElementById("download").innerHTML=xmlhttp.responseText;
-
+						  var pdf = new jsPDF();
+       					 pdf.text(30, 30,xmlhttp.responseText);
+       					 pdf.text(30, 30,' ');
+							pdf.save('tweet.pdf');
+					
+						 
 					}
 				}
-				document.getElementById("downloadpdf").submit();
-			}
 			</script>
 
 
@@ -206,21 +201,7 @@
 					<input type="button" class="btn btn-default" value="Download Tweets" name="d" onClick="download()"/> 
 				</form>
   		</div>
-<?php
-if(isset($_REQUEST['d']))
-{
-require("lib/fpdf17/fpdf.php");
-$pdf=new FPDF();
-$pdf->AddPage();
-$pdf->SetFont("Arial","B","20");
-$pdf->Cell(0,20,"Tweets",0,1,"C");
-$html='<div id="download"></div>';
-$pdf->WriteHTML($html);
-$pdf->Ln();
-$pdf->Ln();
-$pdf->Output();
-}
-?>
+
 					
 	<script src="http://code.jquery.com/jquery-2.2.3.min.js"></script> 
 	<script src="jquery.event.move.js"></script> 
