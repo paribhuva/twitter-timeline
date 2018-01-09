@@ -18,9 +18,9 @@ Author Email: paribhuva@hotmail.com
 
 Code Link: https://github.com/paribhuva/twitter-timeline
 
-Tutorial Link: http://jobcall.in
 
-#For better output use firefox
+
+
 
 ============ Introduction ============
 
@@ -38,7 +38,7 @@ This small project helps web developers to implement the twitter application  wi
 
 ============ How to use Application===========
 
-1.	open jobcall.in
+1.	open your web url
 
 2.	As you open the link it will redirect to twitter.
 
